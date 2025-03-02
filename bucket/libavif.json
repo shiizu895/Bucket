@@ -1,0 +1,24 @@
+{
+    "version": "1.2.0",
+    "description": "Tools and library for encoding and decoding AV1 video streams (.avif)",
+    "homepage": "https://github.com/AOMediaCodec/libavif",
+    "license": "BSD-2-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/AOMediaCodec/libavif/releases/download/v1.2.0/windows-artifacts.zip",
+            "hash": "a4164eea7cee432e285bf2658e880b062557955ffe7883fe2d23e54ab599d632"
+        }
+    },
+    "bin": [
+        "avifdec.exe",
+        "avifenc.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/AOMediaCodec/libavif/releases/download/v$version/windows-artifacts.zip"
+            }
+        }
+    }
+}
