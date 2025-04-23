@@ -6,16 +6,18 @@
         "identifier": "Public Domain,...",
         "url": "https://github.com/nu774/qaac/blob/master/COPYING"
     },
-    "url": [
-        "https://github.com/nu774/qaac/releases/download/v2.84/qaac_2.84.zip",
-        "https://files.catbox.moe/iw8myr.7z"
-    ],
-    "hash": [
-        "5d78862797e69348e197b9ad5f7b220e44894086173f79bab7a9748cfc0e003c",
-        "0c5306f7d2470df167f52a80c230feb893f10fc7a062067c210d1e81b492083b"
-    ],
     "architecture": {
         "64bit": {
+            "url": [
+                "https://github.com/nu774/qaac/releases/download/v2.84/qaac_2.84.zip",
+                "https://github.com/AnimMouse/QTFiles/releases/download/v12.10.11/QTfiles64.7z",
+                "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip"
+            ],
+            "hash": [
+                "5d78862797e69348e197b9ad5f7b220e44894086173f79bab7a9748cfc0e003c",
+                "32fcd058936410f7eabd3b55a8931bce5f45bb7892d6a2c65387820daca52f58",
+                "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde"
+            ],
             "extract_dir": "qaac_2.84\\x64",
             "bin": [
                 [
@@ -27,8 +29,38 @@
                     "refalac"
                 ]
             ]
+        },
+        "32bit": {
+            "url": [
+                "https://github.com/nu774/qaac/releases/download/v2.84/qaac_2.84.zip",
+                "https://github.com/AnimMouse/QTFiles/releases/download/v12.10.11/QTfiles.7z",
+                "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip"
+            ],
+            "hash": [
+                "5d78862797e69348e197b9ad5f7b220e44894086173f79bab7a9748cfc0e003c",
+                "c6c582fe1af4e0c2b1eb7c141ad929a81f14d123aedd3b16df8226c104fb3028",
+                "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde"
+            ],
+            "extract_dir": "qaac_2.84\\x86",
+            "bin": [
+                "qaac.exe",
+                "refalac.exe"
+            ]
         }
     },
+    "extract_to": [
+        "",
+        "QTfiles64"
+    ],
+    "pre_install": [
+        "if ($architecture -eq '32bit') {",
+        "    Rename-Item \"$dir\\QTfiles64\" \"$dir\\QTfiles\"",
+        "    Move-Item \"$dir\\flac-1.5.0-win\\Win32\\libFLAC.dll\" \"$dir\"",
+        "} else {",
+        "    Move-Item \"$dir\\flac-1.5.0-win\\Win64\\libFLAC.dll\" \"$dir\"",
+        "}",
+        "Remove-Item -Recurse -Force \"$dir\\flac-1.5.0-win\""
+    ],
     "checkver": {
         "github": "https://github.com/nu774/qaac"
     },
@@ -37,6 +69,9 @@
         "architecture": {
             "64bit": {
                 "extract_dir": "qaac_$version\\x64"
+            },
+            "32bit": {
+                "extract_dir": "qaac_$version\\x86"
             }
         }
     }
