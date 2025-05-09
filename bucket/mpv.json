@@ -1,0 +1,35 @@
+{
+    "version": "20250504-7e2ba13",
+    "description": "A free, open source, and cross-platform media player",
+    "homepage": "https://mpv.io",
+    "license": "LGPL-2.1-or-later,GPL-2.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/shiizu895/mpv-winbuild/releases/download/2025-05-04-d702e5f/mpv-x86_64-v3-20250504-git-7e2ba13.7z",
+            "hash": "c653079f48316c5ecdd03d5c371581f42f03b08d2cb9df0690de11c3ed4664e0"
+        }
+    },
+    "env_add_path": ".",
+    "shortcuts": [
+        [
+            "mpv.exe",
+            "mpv"
+        ]
+    ],
+    "persist": "portable_config",
+    "checkver": {
+        "github": "https://github.com/shiizu895/mpv-winbuild",
+        "regex": "/releases/download/(?<tag>[\\da-f\\-]+)/mpv-x86_64-v3-(?<date>\\d+)-git-(?<commit>[\\da-f]+)\\.7z",
+        "replace": "${date}-${commit}"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/shiizu895/mpv-winbuild/releases/download/$matchTag/mpv-x86_64-v3-$matchDate-git-$matchCommit.7z",
+                "hash": {
+                    "url": "https://github.com/shiizu895/mpv-winbuild/releases/download/$matchTag/sha256.txt"
+                }
+            }
+        }
+    }
+}
