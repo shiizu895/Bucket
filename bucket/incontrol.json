@@ -1,0 +1,14 @@
+{
+    "version": "1.0.2",
+    "description": "Control automatic OS upgrading.",
+    "homepage": "https://www.grc.com/incontrol.htm",
+    "license": "Freeware",
+    "url": "https://www.grc.com/files/incontrol.exe",
+    "hash": "7982dd86f9cc1f3b6bdb8699bf20603932ea5f7a2ea7c432e81d607e14bb06a3",
+    "shortcuts": [
+        [
+            "incontrol.exe",
+            "InControl"
+        ]
+    ]
+}
