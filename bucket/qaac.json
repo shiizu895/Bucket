@@ -1,5 +1,5 @@
 {
-    "version": "2.86",
+    "version": "2.87",
     "description": "A command line AAC/ALAC encoder frontend based on Apple encoder.",
     "homepage": "https://sites.google.com/site/qaacpage/",
     "license": {
@@ -9,16 +9,16 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/nu774/qaac/releases/download/v2.86/qaac_2.86.zip",
+                "https://github.com/nu774/qaac/releases/download/v2.87/qaac_2.87.zip",
                 "https://github.com/AnimMouse/QTFiles/releases/download/v12.10.11/QTfiles64.7z",
                 "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip"
             ],
             "hash": [
-                "e9a216eaf46cee4e9db5120cf2ca56bf807b3829911fef5167a1ea830e83413a",
+                "858f4373ddc04fb74f9674d210328b690c277543a91f5366043e8eecce38f312",
                 "32fcd058936410f7eabd3b55a8931bce5f45bb7892d6a2c65387820daca52f58",
                 "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde"
             ],
-            "extract_dir": "qaac_2.86\\x64",
+            "extract_dir": "qaac_2.87\\x64",
             "bin": [
                 [
                     "qaac64.exe",
@@ -32,16 +32,16 @@
         },
         "32bit": {
             "url": [
-                "https://github.com/nu774/qaac/releases/download/v2.86/qaac_2.86.zip",
+                "https://github.com/nu774/qaac/releases/download/v2.87/qaac_2.87.zip",
                 "https://github.com/AnimMouse/QTFiles/releases/download/v12.10.11/QTfiles.7z",
                 "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip"
             ],
             "hash": [
-                "e9a216eaf46cee4e9db5120cf2ca56bf807b3829911fef5167a1ea830e83413a",
+                "858f4373ddc04fb74f9674d210328b690c277543a91f5366043e8eecce38f312",
                 "c6c582fe1af4e0c2b1eb7c141ad929a81f14d123aedd3b16df8226c104fb3028",
                 "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde"
             ],
-            "extract_dir": "qaac_2.86\\x86",
+            "extract_dir": "qaac_2.87\\x86",
             "bin": [
                 "qaac.exe",
                 "refalac.exe"
