@@ -1,0 +1,33 @@
+{
+    "version": "3.62",
+    "description": "Audio conversion tool",
+    "homepage": "https://www.rationalqm.us/eac3to/",
+    "license": "Freeware",
+    "url": [
+        "https://www.videohelp.com/download/eac3to_3.62.rar",
+        "https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip"
+    ],
+    "hash": [
+        "dd052d17134bf201fdd246d67ab2512a0be62c9830d87a784f34b229c13fe4bb",
+        "53f1500f0d6e7c61379d7fee50d4a9f7f504c650009506d9ba015530d76c0dde"
+    ],
+    "bin": "eac3to.exe",
+    "pre_install": [
+        "Remove-Item \"$dir\\*\" -Include *.wav, libFLAC.dll",
+        "if (!(Test-Path \"$persist_dir\\eac3to.ini\")) {",
+        "    @(",
+        "        '-nolog'",
+        "    ) | Add-Content -Path \"$dir\\eac3to.ini\"",
+        "}",
+        "Move-Item \"$dir\\flac-1.5.0-win\\Win32\\libFLAC.dll\" \"$dir\"",
+        "Remove-Item -Recurse -Force \"$dir\\flac-1.5.0-win\""
+    ],
+    "persist": "eac3to.ini",
+    "checkver": {
+        "url": "https://www.videohelp.com/software/eac3to",
+        "regex": "eac3to_([\\d.]+).rar"
+    },
+    "autoupdate": {
+        "url": "https://www.videohelp.com/download/eac3to_$version.rar"
+    }
+}
